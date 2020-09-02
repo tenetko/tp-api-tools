@@ -1,0 +1,19 @@
+{
+    "marker": "MARKER",
+    "token": "TOKEN",
+    "lang": "RU",
+    "currency": "rub",
+    "wait_for_results": "0",
+    "sleep": "15",
+
+    "iata": "AER",
+    "city_id": "12096",
+    "hotel_id": "19116300",
+
+    "check_in": "2020-09-16",
+    "check_out": "2020-09-17",
+
+    "adults_count": "2",
+    "children_count": "0",
+    "child_age": "0"
+}
