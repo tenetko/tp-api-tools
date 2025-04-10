@@ -130,5 +130,9 @@ dmypy.json
 
 # Other files
 config.json
-request.txt
-response.json
+*.txt
+*.json
+*.html
+.env
+.idea
+

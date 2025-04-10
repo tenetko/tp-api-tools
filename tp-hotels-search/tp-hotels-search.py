@@ -1,12 +1,13 @@
 #!/usr/bin/python
 
+import collections
+import json
 import os
 import sys
-import json
-import collections
-import requests
 from hashlib import md5
 from time import sleep
+
+import requests
 
 
 class HotelsSearcher:
@@ -48,8 +49,10 @@ class HotelsSearcher:
 
     def get_init_signature(self) -> str:
         signature_params_values = self.get_init_signature_params()
-        init_signature_string = "{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}".format(
-            self.config["token"], self.config["marker"], *signature_params_values
+        init_signature_string = (
+            "{0}:{1}:{2}:{3}:{4}:{5}:{6}:{7}:{8}:{9}:{10}:{11}".format(
+                self.config["token"], self.config["marker"], *signature_params_values
+            )
         )
         init_signature_string_md5 = md5(init_signature_string.encode()).hexdigest()
         self.search_params["init_signature_string"] = init_signature_string
@@ -87,7 +90,7 @@ class HotelsSearcher:
             location_types_map[self.config["location"]],
             self.config[self.config["location"]],
             signature,
-            **self.config
+            **self.config,
         )
         self.search_params["init_url"] = init_url
 
